@@ -10,7 +10,8 @@ import java.util.List;
 @Setter
 
 public class Member {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "member_id")
     private Long id;
     private String name;
@@ -19,3 +20,4 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
+
