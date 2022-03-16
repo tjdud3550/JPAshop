@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
@@ -10,6 +12,7 @@ import static javax.persistence.FetchType.LAZY;
 
 @Entity @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
     @Id
     @GeneratedValue
@@ -27,6 +30,11 @@ public class OrderItem {
 
     private int orderPrice; //주문가격
     private int count; // 주문 수량
+
+
+    protected OrderItem(Long id) {
+
+    }
 
     //==생성 메서드==//
     public  static OrderItem createOrderItem(Item item,int orderPrice,int count){
@@ -47,7 +55,7 @@ public class OrderItem {
 
     }
     /**주문 상품 전체 가격 조회 */
-    
+
     public  int getTotalPrice(){
         return getOrderPrice() * getCount();
     }
