@@ -38,7 +38,7 @@ public class OrderService {
 
 
         //주문 생성
-        Order.createOrder(member,delivery,orderItem);
+        Order order = Order.createOrder(member,delivery,orderItem);
 
         //주문 저장
         orderRepository.save(order);

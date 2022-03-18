@@ -14,6 +14,7 @@ import java.util.List;
 
 public class MemberRepository {
 
+    @PersistenceContext
     private EntityManager em;
 
     public void save(Member member){
