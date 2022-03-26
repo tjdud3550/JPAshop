@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController //데이터자체를 Xml 파일로보냄
-@RequiredArgsConstructor
+@RequiredArgsConstructor //생성자 주입
 
 public class MemberApiController {
-    private  final MemberService memberService;
+    private  final MemberService memberService; //생성자 탄생
 
     @GetMapping("api/v1/members")
     public List<Member> membersV1(){
